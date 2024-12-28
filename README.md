@@ -3,117 +3,99 @@ A Sequence-to-Sequence (Seq2Seq) model with attention mechanism for sequence tra
 
 ---
 
-# Sequence-to-Sequence Model with Attention Mechanism
+# Seq2Seq Model with Attention Mechanism
 
-This project implements a Sequence-to-Sequence (Seq2Seq) model with an attention mechanism using PyTorch. It is designed for sequence transformation tasks, such as sequence reversal, and includes modular code for data processing, model training, and evaluation.
+This project implements a Sequence-to-Sequence (Seq2Seq) model with an attention mechanism for sequence transformation tasks using PyTorch. The model is trained on synthetic data and evaluates performance in reversing sequences. 
+
+## Features
+- **Seq2Seq Architecture**: Includes Encoder, Attention, and Decoder components.  
+- **Attention Mechanism**: Enables better handling of long input sequences by focusing on relevant parts.  
+- **Synthetic Dataset**: Automatically generates source and target sequences for training.  
+- **Training and Testing**: Includes scripts for training the model and evaluating accuracy.  
+- **Visualization**: Plots the training loss curve for monitoring progress.  
+- **Modular Design**: Organized with separate files and folders for models, utilities, and data.  
 
 ## Project Structure
-
 ```
 Seq2Seq_Model_Project/
 │
-├── data/
-│   └── dataset.csv           # Dataset containing source and target sequences
+├── data/                     # Dataset-related files
+│   └── dataset.csv           # Source and target sequences
 │
-├── models/
-│   ├── encoder.py            # Encoder class definition
-│   ├── attention.py          # Attention class definition
-│   ├── decoder.py            # Decoder class definition
-│   └── seq2seq.py            # Seq2Seq model definition
+├── models/                   # Model definitions
+│   ├── encoder.py            # Encoder class
+│   ├── attention.py          # Attention class
+│   ├── decoder.py            # Decoder class
+│   └── seq2seq.py            # Seq2Seq model
 │
-├── utils/
-│   └── data_processing.py    # Utility script for data generation and processing
+├── utils/                    # Utility functions
+│   └── data_processing.py    # Data generation and processing
 │
-├── notebooks/
-│   └── seq2seq_model.ipynb   # Jupyter notebook for initial experimentation
-│
-├── train.py                  # Script for training the Seq2Seq model
-├── test.py                   # Script for testing and evaluating the model
-├── main.py                   # Main script to execute the end-to-end workflow
-├── requirements.txt          # Dependencies required to run the project
-└── README.md                 # Project documentation
+├── train.py                  # Training script
+├── test.py                   # Testing script
+├── main.py                   # Script to execute the full workflow
+├── requirements.txt          # Dependencies
+├── README.md                 # Documentation
+└── notebooks/                # (Optional) Experimentation notebooks
+    └── seq2seq_model.ipynb
 ```
 
 ## Results
-
 ### Training Loss
-The model was trained for 10 epochs, and the loss progressively decreased as shown below:
+The training loss decreased over 10 epochs, showing effective learning:
+- **Epoch 1 Loss**: 2.16  
+- **Epoch 10 Loss**: 0.32  
 
-```
-Epoch 1: Loss: 2.1623
-Epoch 5: Loss: 1.1443
-Epoch 10: Loss: 0.3171
-```
-
-### Accuracy
+### Test Accuracy
 The model achieved **94.22% accuracy** on the test dataset.
 
-## Features
-- Implements a Seq2Seq architecture with an attention mechanism.
-- Supports custom synthetic dataset generation.
-- Modular codebase for ease of understanding and reuse.
-- Training loss visualization using Matplotlib.
+## Prerequisites
+- Python 3.9 or higher
+- CUDA-enabled GPU (optional for faster training)
 
-## Getting Started
-
-### Prerequisites
-- Python 3.8 or higher
-- PyTorch 1.9 or higher
-
-### Installation
-1. Clone this repository:
+## Installation
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/Seq2Seq_Model_Project.git
-   ```
-2. Navigate to the project directory:
-   ```bash
+   git clone <repository-url>
    cd Seq2Seq_Model_Project
    ```
-3. Create a virtual environment and activate it:
+2. Set up a virtual environment:  
    ```bash
    python -m venv venv
-   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
-4. Install the required dependencies:
+3. Install dependencies:  
    ```bash
    pip install -r requirements.txt
    ```
 
 ## Usage
+1. **Generate Dataset**:  
+   Run the data processing script to create `dataset.csv` in the `data/` folder:  
+   ```bash
+   python utils/data_processing.py
+   ```
+2. **Train the Model**:  
+   Train the Seq2Seq model using `train.py`:  
+   ```bash
+   python train.py
+   ```
+3. **Test the Model**:  
+   Evaluate accuracy on the test dataset:  
+   ```bash
+   python test.py
+   ```
 
-### 1. Train the Model
-Run the training script to train the Seq2Seq model:
-```bash
-python train.py
-```
+## Dependencies
+- PyTorch  
+- NumPy  
+- Pandas  
+- Matplotlib  
+- scikit-learn  
 
-### 2. Test the Model
-Evaluate the trained model on the test dataset:
-```bash
-python test.py
-```
-
-### 3. Main Workflow
-Execute the complete pipeline (data processing, training, and testing):
-```bash
-python main.py
-```
-
-### 4. Jupyter Notebook
-Experiment interactively using the provided notebook:
-```bash
-jupyter notebook notebooks/seq2seq_model.ipynb
-```
-
-## Dataset
-The dataset is automatically generated as a CSV file (`data/dataset.csv`) containing synthetic sequences for training and testing.
-
-## Future Enhancements
-- Extend the model to handle real-world sequence tasks such as machine translation.
-- Implement beam search for improved decoding.
-- Add support for different sequence lengths.
+For more details, see `requirements.txt`.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See `LICENSE` for more details.
 
 ---
