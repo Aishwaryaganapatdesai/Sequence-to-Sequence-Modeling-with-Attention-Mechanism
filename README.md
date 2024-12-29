@@ -48,7 +48,7 @@ The training loss decreased over 10 epochs, showing effective learning:
 - **Epoch 10 Loss**: 0.26381  
 
 ### Test Accuracy
-The model achieved **94.22% accuracy** on the test dataset.
+The model achieved **94.33% accuracy** on the test dataset.
 
 ## Prerequisites
 - Python 3.9 or higher
