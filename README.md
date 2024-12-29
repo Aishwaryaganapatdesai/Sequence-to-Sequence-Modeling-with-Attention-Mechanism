@@ -43,8 +43,9 @@ Seq2Seq_Model_Project/
 ## Results
 ### Training Loss
 The training loss decreased over 10 epochs, showing effective learning:
-- **Epoch 1 Loss**: 2.16  
-- **Epoch 10 Loss**: 0.32  
+- **Epoch 1 Loss**:  2.16299
+- **Epoch 5 Loss**:  1.17597
+- **Epoch 10 Loss**: 0.26381  
 
 ### Test Accuracy
 The model achieved **94.22% accuracy** on the test dataset.
