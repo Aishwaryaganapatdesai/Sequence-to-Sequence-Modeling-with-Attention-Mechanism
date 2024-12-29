@@ -85,6 +85,10 @@ The model achieved **94.33% accuracy** on the test dataset.
    Evaluate accuracy on the test dataset:  
    ```bash
    python test.py
+4. **Get the results**:  
+   Get accuracy and loss curve on the test dataset:  
+   ```bash
+   python main.py
    ```
 
 ## Dependencies
